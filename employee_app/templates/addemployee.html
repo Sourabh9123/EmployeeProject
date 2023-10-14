@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Add Employee{% endblock title %}
+
+{% block body %}
+
+
+
+<div class='container my-4 text-center'>
+    <a class="btn btn-primary" href="/" role="button">Home</a>
+    {% if request.path != '/employees' %}
+      <a class="btn btn-primary" href="/employees" role="button">View All Employee</a>
+  {% endif %}
+  
+  {% if request.path != '/addemployee' %}
+      <a class="btn btn-primary" href="/addemployee" role="button">Add An Employee</a>
+  {% endif %}
+  
+  {% if request.path != '/removeemployee' %}
+      <a class="btn btn-primary" href="/removeemployee" role="button">Remove An Employee</a>
+  {% endif %}
+  
+  {% if request.path != '/searchemployee' %}
+      <a class="btn btn-primary" href="/searchemployee" role="button">Filter Employee Details</a>
+  {% endif %}
+  </div>
+  
+
+
+<div class='container-sm my-3'>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="badge bg-primary text-wrap"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+    {% endif %}
+
+<form method="post" action="{% url 'add_employees' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" required>
+    </div>
+    <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="text" class="form-control" id="age" name="age" aria-describedby="emailHelp" required>
+    </div>
+    <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <input type="text" class="form-control" id="department" name="department" aria-describedby="emailHelp" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div >
+
+
+
+{% endblock body %}
+

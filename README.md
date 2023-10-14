@@ -37,18 +37,18 @@ Python manage.py runserver
     Features of button 
 
 
-View All Employees
+### View All Employees
 
     Click on the "View All Employees" link on the main page to see a list of all employees in the database.
 
 
-Add Employee
+### Add Employee
 
     Click on the "Add Employee" link on the main page.
     Fill in the employee's details in the provided form ( name, age, department ).
     Click the "Submit" button to add the employee to the database.
 
-Delete Employee
+### Delete Employee
 
     To delete an employee, go to the "Remove An Employee" link on the main page.
 	Enter the name of employee in the form.
@@ -56,7 +56,7 @@ Delete Employee
 
 
 
-Filter Employees
+### Filter Employees
 
      Click on the "Filter Employee Details " link on the main page.
 	Enter the name of employee in the form.
